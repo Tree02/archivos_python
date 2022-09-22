@@ -9,7 +9,9 @@
 
 # Ejercicios con diccionarios
 
+from cgi import print_arguments
 import csv
+from time import process_time_ns
 
 
 def ej1():
@@ -19,11 +21,17 @@ def ej1():
     
     # stock = ....
 
+    stock = {}
+
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
+
+    stock['tornillos'] = 100
+    stock['tuercas'] = 150
+    stock['arandelas'] = 300
 
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
@@ -33,6 +41,7 @@ def ej1():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +49,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -54,6 +63,24 @@ def ej2():
     #   - Si el usuario ingresa un producto no definido en el stock
     #   se debe enviar un mensaje de error. (si desea investigar esto
     #   se resuelve muy bien utilizando el operador "in" con diccionarios)
+
+    while True:
+        preg = input('Qué producto desea agregar al stock?\n')
+        '''for k,v in stock.items():
+            if 'preg' not in stock:
+                break''' #INTENTO DE QUE TIRE ERROR CUANDO PONE ALGO INCORRECTO
+        if preg.upper() == 'FIN':
+            break
+        cantidad = int(input('Ingrese cuánta cantidad quiere ingresar de dicho producto:\n'))
+        for k,v in stock.items():
+            if k == preg: 
+                stock[preg] = v + cantidad
+        print(stock)
+        
+    print(stock)
+                
+
+                    
 
     # Paso 3:
     # Luego de haber ingresado el producto se debe ingresar por consola

@@ -6,7 +6,6 @@
 
 import csv
 
-
 def diccionario():
     # Crear un diccionario de inquilinos del primero piso
     piso_1 = {'a': 'Gutierrez', 'b': 'Naon', 'c': 'Palermo'}
@@ -52,7 +51,7 @@ def diccionario():
     # ¿Quíen vive en el 1e?
     # ¿Cómo podemos acceder a un valor que no existe
     # y que no explite el programa --> Utilizando "get":
-    print(piso_1.get('e'))
+    print(piso_1.get('a'))
 
 
 if __name__ == '__main__':
